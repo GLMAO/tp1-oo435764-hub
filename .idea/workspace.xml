@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d6aeb585-e64a-4e19-ac34-74fc1d19b44a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/tp-gl-master/timer-service-client/src/main/java/org/emp/gl/clients/CompteARebours.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tp-gl-master/timer-service-client/src/main/java/org/emp/gl/clients/HorlogeGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp-gl-master/launcher/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tp-gl-master/launcher/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp-gl-master/launcher/src/main/java/org/emp/gl/core/launcher/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/tp-gl-master/launcher/src/main/java/org/emp/gl/core/launcher/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp-gl-master/launcher/target/classes/org/emp/gl/core/launcher/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/tp-gl-master/launcher/target/classes/org/emp/gl/core/launcher/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp-gl-master/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tp-gl-master/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp-gl-master/time-service-impl/src/main/java/org/emp/gl/time/service/impl/DummyTimeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/tp-gl-master/time-service-impl/src/main/java/org/emp/gl/time/service/impl/DummyTimeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp-gl-master/time-service-impl/target/classes/org/emp/gl/time/service/impl/DummyTimeServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/tp-gl-master/time-service-impl/target/classes/org/emp/gl/time/service/impl/DummyTimeServiceImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp-gl-master/time-service-impl/target/classes/org/emp/gl/time/service/impl/DummyTimeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/tp-gl-master/time-service-impl/target/classes/org/emp/gl/time/service/impl/DummyTimeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp-gl-master/timer-service-client/src/main/java/org/emp/gl/clients/Horloge.java" beforeDir="false" afterPath="$PROJECT_DIR$/tp-gl-master/timer-service-client/src/main/java/org/emp/gl/clients/Horloge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp-gl-master/timer-service-client/target/classes/org/emp/gl/clients/Horloge.class" beforeDir="false" afterPath="$PROJECT_DIR$/tp-gl-master/timer-service-client/target/classes/org/emp/gl/clients/Horloge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp-gl-master/timer-service/src/main/java/org/emp/gl/timer/service/TimerChangeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/tp-gl-master/timer-service/src/main/java/org/emp/gl/timer/service/TimerChangeListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp-gl-master/timer-service/target/classes/org/emp/gl/timer/service/TimerChangeListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/tp-gl-master/timer-service/target/classes/org/emp/gl/timer/service/TimerChangeListener.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="34vNb49W2Qa4z2qSJ5INflyTmYS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.App.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d6aeb585-e64a-4e19-ac34-74fc1d19b44a" name="Changes" comment="" />
+      <created>1762090160922</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762090160922</updated>
+    </task>
+    <servers />
+  </component>
+</project>

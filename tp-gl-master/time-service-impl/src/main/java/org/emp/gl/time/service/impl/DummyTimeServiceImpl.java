@@ -1,168 +1,43 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.emp.gl.time.service.impl;
-
-import java.time.LocalTime;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import org.emp.gl.timer.service.TimerChangeListener;
 import org.emp.gl.timer.service.TimerService;
 
-/**
- *
- * @author tina
- */
-public class DummyTimeServiceImpl
-        implements TimerService {
+import java.beans.PropertyChangeSupport;
+import java.time.LocalTime;
+import java.util.Timer;
+import java.util.TimerTask;
 
-    int dixiemeDeSeconde;
-    int minutes;
-    int secondes;
-    int heures;
-    List<TimerChangeListener> listeners = new LinkedList<>();
+public class DummyTimeServiceImpl implements TimerService {
 
-    /**
-     * Constructeur du DummyTimeServiceImpl: ici, 
-     * nous nous avons utilisé un objet Timer, qui permet de
-     * réaliser des tics à chaque N millisecondes
-     */
+    private int heures, minutes, secondes, dixieme;
+    private final PropertyChangeSupport pcs = new PropertyChangeSupport(this);
+
     public DummyTimeServiceImpl() {
-        setTimeValues();
-        // initialize schedular
-        Timer timer = new Timer();
-        TimerTask task = new TimerTask() {
-             @Override
-            public void run() {
-                timeChanged();
-            }
-        };
-        timer.scheduleAtFixedRate(task, 100, 100);
+        new Timer(true).scheduleAtFixedRate(new TimerTask() {
+            @Override public void run() { updateTime(); }
+        }, 0, 100);
+        updateTime();
     }
 
-    private void setTimeValues() {
-        LocalTime localTime = LocalTime.now();
-
-        setSecondes(localTime.getSecond());
-        setMinutes(localTime.getMinute());
-        setHeures(localTime.getHour());
-        setDixiemeDeSeconde(localTime.getNano() / 100000000);
+    private void updateTime() {
+        LocalTime t = LocalTime.now();
+        setHeures(t.getHour());
+        setMinutes(t.getMinute());
+        setSecondes(t.getSecond());
+        setDixiemeDeSeconde(t.getNano() / 100_000_000);
     }
 
-   
+    private void setHeures(int v) { if (heures != v) { int o = heures; heures = v; pcs.firePropertyChange(TimerChangeListener.HEURE_PROP, o, v); } }
+    private void setMinutes(int v) { if (minutes != v) { int o = minutes; minutes = v; pcs.firePropertyChange(TimerChangeListener.MINUTE_PROP, o, v); } }
+    private void setSecondes(int v) { if (secondes != v) { int o = secondes; secondes = v; pcs.firePropertyChange(TimerChangeListener.SECONDE_PROP, o, v); } }
+    private void setDixiemeDeSeconde(int v) { if (dixieme != v) { int o = dixieme; dixieme = v; pcs.firePropertyChange(TimerChangeListener.DIXIEME_DE_SECONDE_PROP, o, v); } }
 
+    @Override public void addTimeChangeListener(TimerChangeListener l) { pcs.addPropertyChangeListener(l); }
+    @Override public void removeTimeChangeListener(TimerChangeListener l) { pcs.removePropertyChangeListener(l); }
 
-    @Override
-    public void addTimeChangeListener(TimerChangeListener pl) {
-        // TODO
-        listeners.add(pl) ;
-    }
-
-    @Override
-    public void removeTimeChangeListener(TimerChangeListener pl) {
-        // TODO
-        listeners.remove(pl) ;
-    }
-
-    private void timeChanged() {
-        setTimeValues();
-    }
-
-    public void setDixiemeDeSeconde(int newDixiemeDeSeconde) {
-        if (dixiemeDeSeconde == newDixiemeDeSeconde)
-            return;
-
-        int oldValue = dixiemeDeSeconde;
-        dixiemeDeSeconde = newDixiemeDeSeconde;
-
-        // informer les listeners !
-        dixiemeDeSecondesChanged(oldValue, dixiemeDeSeconde);
-    }
-
-    private void dixiemeDeSecondesChanged(int oldValue, int newValue) {
-       for (TimerChangeListener l : listeners) {
-           l.propertyChange(TimerChangeListener.DIXEME_DE_SECONDE_PROP,
-                   oldValue, dixiemeDeSeconde);
-       }
-    }
-
-
-    public void setSecondes(int newSecondes) {
-        if (secondes == newSecondes)
-            return;
-
-        int oldValue = secondes;
-        secondes = newSecondes;
-
-        secondesChanged(oldValue, secondes);
-    }
-
-    private void secondesChanged(int oldValue, int secondes) {
-
-       for (TimerChangeListener l : listeners) {
-           l.propertyChange(TimerChangeListener.SECONDE_PROP,
-                   oldValue, secondes);
-       }
-    }
-
-
-    public void setMinutes(int newMinutes) {
-        if (minutes == newMinutes)
-            return;
-
-        int oldValue = minutes;
-        minutes = newMinutes;
-
-        minutesChanged (oldValue, minutes) ;
-    }
-
-    private void minutesChanged(int oldValue, int minutes) {
-       for (TimerChangeListener l : listeners) {
-           l.propertyChange(TimerChangeListener.MINUTE_PROP,
-                   oldValue, secondes);
-       }
-    }
-
-    public void setHeures(int newHeures) {
-        if (heures == newHeures)
-            return;
-
-        int oldValue = heures;
-        heures = newHeures;
-
-        heuresChanged (oldValue, heures) ;
-    }
-
-    private void heuresChanged(int oldValue, int heures) {
-       for (TimerChangeListener l : listeners) {
-           l.propertyChange(TimerChangeListener.HEURE_PROP,
-                   oldValue, secondes);
-       }
-    }
-
-
-    @Override
-    public int getDixiemeDeSeconde() {
-        return dixiemeDeSeconde;
-    }
-
-    @Override
-    public int getHeures() {
-        return heures;
-    }
-
-    @Override
-    public int getMinutes() {
-        return minutes;
-    }
-
-    @Override
-    public int getSecondes() {
-        return secondes;
-    }
+    @Override public int getHeures() { return heures; }
+    @Override public int getMinutes() { return minutes; }
+    @Override public int getSecondes() { return secondes; }
+    @Override public int getDixiemeDeSeconde() { return dixieme; }
 }
